@@ -1,0 +1,44 @@
+# Example with Graphql Spring Boot and Netflix
+
+
+This project is a simple example about how to use graphQL with Quarkus.
+If you want more information you can take a look into https://refactorizando.com/ejemplo-graphql-quarkus
+
+## How to run the application
+
+You can run your application in dev mode that enables live coding using:
+```shell script
+./mvnw compile quarkus:dev
+```
+
+
+## How can I check it?
+if you want to make some test after run it you can go to:
+
+http://localhost:8080/q/graphql-ui/
+
+and run the next json
+
+```shell script
+   mutation CREATE {
+      createBank(bank:
+        {
+        name: "Santander", country:"Spain"}) {
+        id
+        name
+        country
+        }
+    }
+```
+and after that you can use the next json to get all banks, and you can choose the fields that you want in your response.
+
+```shell script
+
+{
+  banks{
+   id
+   name
+   country
+  }
+}
+```
